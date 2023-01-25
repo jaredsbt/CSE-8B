@@ -1,17 +1,14 @@
-import tester.*;
-
 class CompileTimeErrors{
-    
-    // calculate the area of a right triangle
-    double rightTriangleArea(double base, double height){
-        return base * height / 2;
+    String checkNumber(double myNumber){
+        if (myNumber > 0){
+            return "The number " + myNumber + " is positive.";
+        }
+        else if (myNumber < 0){ 
+            return "The number " + myNumber + " is negative."; 
+        }
+        return "The number is zero.";
     }
-    
-    // square a number
-    int squareNumber(int myNumber){
-        return myNumber * myNumber;
-    }
-  
-    double answer1 = this.rightTriangleArea(3, 5); // expected 7.5
-    int answer2 = this.squareNumber(5); // expected 25
+    String answer1 = checkNumber(1);
+    String answer2 = checkNumber(0); 
+    String answer3 = checkNumber(-10.5); 
 }
