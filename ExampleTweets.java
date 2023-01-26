@@ -19,7 +19,7 @@ class Tweet{
     String tweetID;
     User person; 
 
-    Tweet(User person, String textTweet, int tweetLikes, String tweetID) {
+    Tweet(String textTweet, User person, int tweetLikes, String tweetID) {
         this.textTweet = textTweet;
         this.tweetLikes = tweetLikes;
         this.tweetID = tweetID;
@@ -49,19 +49,19 @@ class ExampleTweets {
     User kimberlyPrather = new User("kprather88", "Kimberly_Prather,_Ph.D.", 85900);
 
     //  First tweet: https://twitter.com/TheLeadDev/status/1618053218545680385?cxt=HHwWgoC-8Yq1vfQsAAAA . I could not represent the images, urls, the @links included in this tweet, the date and time it was posted.
-    Tweet leadDevTweet = new Tweet(leadDev, "Great egineers don't need to be passionate about programming; they need to be able to find flow in their work", 1, "1618053218545680385");
+    Tweet leadDevTweet = new Tweet("Great egineers don't need to be passionate about programming; they need to be able to find flow in their work", leadDev, 1, "1618053218545680385");
 
     //  Second Tweet: https://twitter.com/TheLeadDev/status/1617822453715161089?cxt=HHwWgsC-9ea81PMsAAAA . I could not represent the images, urls, the @links included in this tweet, the date and time it was posted.
-    Tweet leadDevTweet2 = new Tweet(leadDev, "The balance of motivating your teammates and ensuring their hopes are realistic.", 1, "161782245371516108");
+    Tweet leadDevTweet2 = new Tweet("The balance of motivating your teammates and ensuring their hopes are realistic.", leadDev, 1, "161782245371516108");
 
     // first tweet: https://twitter.com/UCSanDiego/status/1601250326950076418?cxt=HHwWhICz5Yis5LgsAAAA . I could not represent the images, urls, the @links included in this tweet, the date and time it was posted.  
-    Tweet ucsdEgineeringTweet = new Tweet(ucsdEgineering, "To kick off this season of giving, we've compiled a gift guide featuring products and experiences from @ucsdalumni, faculty, innovators, entrepreneurs and more. Take a look at our 2022 Triton Holiday Gift Guide here:", 8, "1601250326950076418");
+    Tweet ucsdEgineeringTweet = new Tweet("To kick off this season of giving, we've compiled a gift guide featuring products and experiences from @ucsdalumni, faculty, innovators, entrepreneurs and more. Take a look at our 2022 Triton Holiday Gift Guide here:", ucsdEgineering, 8, "1601250326950076418");
 
-    // second tweet: https://twitter.com/UCSDJacobs/status/1606342029645991937?cxt=HHwWgsCijZbk78osAAAA .  I could not represent the images, urls, the @links included in this tweet, the date and time it was posted. 
-    Tweet ucsdEgineeringTweet2 = new Tweet(ucsdEgineering, "As we pause to rest and recharge before jumping into more research and engineering education for the public good next year, we’re reflecting on all that our students, faculty, staff and partners accomplished in 2022. the holiday break, Tritons!", 1, "1606342029645991937"); 
+    // second tweet: https://twitter.com/UCSDJacobs/status/1606342029645991937?cxt=HHwWgsCijZbk78osAAAA .  I could not represent the images, urls, the @links included in this tweet, the date and time it was posted. Also, I could not us an apostrophe. 
+    Tweet ucsdEgineeringTweet2 = new Tweet("As we pause to rest and recharge before jumping into more research and engineering education for the public good next year, were reflecting on all that our students, faculty, staff and partners accomplished in 2022. the holiday break, Tritons!", ucsdEgineering, 1, "1606342029645991937"); 
 
     // Tweet from Third User: https://twitter.com/kprather88/status/1616477072448458754?cxt=HHwWhMDUrafV8O4sAAAA . I could not represent the user who this tweet was replying to and the quotation marks ("") she used in the tweet.
-    Tweet kimberlyPratherTweet = new Tweet(kimberlyPrather, " 'Borderline unethical' to clean indoor air? Really?  Should we save $$ and not filter the water they drink too? Air filtration cleans air pollution (and viruses) out of their air. Everyone (not just the rich) is entitled to clean indoor air.  It is so hugely important to health.", 205, "1616477072448458754");
+    Tweet kimberlyPratherTweet = new Tweet(" 'Borderline unethical' to clean indoor air? Really?  Should we save $$ and not filter the water they drink too? Air filtration cleans air pollution (and viruses) out of their air. Everyone (not just the rich) is entitled to clean indoor air.  It is so hugely important to health.", kimberlyPrather, 205, "1616477072448458754");
 
     String leadFullName = this.leadDev.toText();
     String engineeringFullName = this.ucsdEgineering.toText();
