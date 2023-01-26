@@ -34,7 +34,7 @@ class Tweet{
     }
 
     String toText(){
-        String text = this.person.displayName + " @" + this.person.userName + this.textTweet + this.tweetLikes;
+        String text = this.person.displayName + " @" + this.person.userName + " : " + this.textTweet + " : " + this.tweetLikes +  " Likes";
         return text;
     }
     String toLink(){
