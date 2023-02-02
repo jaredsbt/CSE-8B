@@ -10,22 +10,22 @@ class Drill4 {
         }
     }
 
-    int maxDifference(int x, int y, int z) {
-        if (x <= 0 || y <= 0 || z <0) {
-            if (x <= 0 && y >= z) {
-                return y - x;
-            } else if (x <= 0 && y <= z) {
-                return z - x;
-            } else if (y <= 0 && x >= z) {
-                return x - y;
-            } else if (y <= 0 && x <= z) {
-                return z - y;
-            } else if (z <= 0 && y >= x) {
-                return y - z;
-            } else if (z <= 0 && y <= x) {
-                return x - z;
-            }
-        }
+    int maxDifference(int x, int y, int z) { // -1, 5, -2 expected 7 result was 6
+        // if (x <= 0 || y <= 0 || z <0) {
+        //     if (x <= 0 && y >= z) {
+        //         return y - x;
+        //     } else if (x <= 0 && y <= z) {
+        //         return z - x;
+        //     } else if (y <= 0 && x >= z) {
+        //         return x - y;
+        //     } else if (y <= 0 && x <= z) {
+        //         return z - y;
+        //     } else if (z <= 0 && y >= x) {
+        //         return y - z;
+        //     } else if (z <= 0 && y <= x) {
+        //         return x - z;
+        //     }
+        // }
         int diff1 = x - y; // -1
         int diff2 = x - z; // -2
         int diff3 = y - x; // 1
@@ -82,6 +82,7 @@ class Drill4 {
     int difference1 = this.maxDifference(-6,-5, 5);  // 11
     int difference2 = this.maxDifference(5,6, 7); // 2
     int difference3 = this.maxDifference(-3,-3, 4); // 7
+    int difference4 = this.maxDifference(-1,5, -2);
 
     double area1 = this.ringArea(25, 3); // 1935
     double area2 = this.ringArea(-77, 0); // 1826
