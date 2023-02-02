@@ -11,6 +11,6 @@ class B {
 class C {
     B fieldB;
     A fieldA;
-    int fiel3;
+    int field3;
 }
 
