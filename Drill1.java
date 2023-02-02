@@ -1,14 +1,14 @@
-class A{
+class A {
     int f1;
     String f2;
 }
 
-class B{
+class B {
     A field1;
     String field2;
 }
 
-class c{
+class C {
     B fieldB;
     A fieldA;
     int fiel3;
