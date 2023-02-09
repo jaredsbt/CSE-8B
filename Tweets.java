@@ -1,9 +1,9 @@
 import tester.*;
 
 interface Tweet {
-    boolean isStartOfThreadBy(String author);
-    int totalLikes();
-    String unrollThread();
+    public boolean isStartOfThreadBy(String author);
+    public int totalLikes();
+    public String unrollThread();
 }
 
 class TextTweet implements Tweet {
@@ -26,7 +26,7 @@ class TextTweet implements Tweet {
     }
 
     public String unrollThread() {
-        return this.author + "\n" + this.likes + " likes\n" + this.contents + "\n";
+        return this.author + "\n" + this.likes + " likes" + "\n" + this.contents + "\n";
     }
 }
 
@@ -52,7 +52,7 @@ class ReplyTweet implements Tweet {
     }
 
     public String unrollThread() {
-        return this.author + "\n" + this.likes + " likes\n" + this.contents + "\n";
+        return this.author + "\n" + this.likes + " likes" + "\n" + this.contents + "\n";
     }
 }
 
