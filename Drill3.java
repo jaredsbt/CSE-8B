@@ -48,14 +48,11 @@ class ReplyTweet {
     }
 
     boolean hasMention(String username) {
-        String usernameWithAt = "@" + username + " ";
-        if((this.contents.contains(usernameWithAt)) || (this.replyTo.contents.contains(usernameWithAt))){
-            return true;
-        } else {
-            return false;
-        }
+        String usernameWithAt = "@" + username;
+        String firstUsernameWithAt = "@" + username + " ";
+        return this.contents.contains(firstUsernameWithAt) || (this.replyTo.contents.contains(firstUsernameWithAt)) ||
+               this.contents.contains(usernameWithAt) || this.replyTo.contents.contains(usernameWithAt);
     }
-}
 
 class Drill3 {
     TextTweet example1 = new TextTweet("hello world", 333);
