@@ -23,22 +23,16 @@ class ArrayExamples {
         return true;
     }
 
-    boolean allWithinRange(Double[] nums, Double low, Double high) {
-        if(nums != null) {
-            for(int i = 0; 1 < nums.length; i++) {
-                if(nums[i] < low || nums[i] > high)
-                return false;
-            }
+    boolean allWithinRange(double[] nums, double low, double high) {
+        if(nums.length == 0) {return true;}
+        int truths = 0;
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] >= low && nums[i] <= high) {truths += 1;}
         }
-        return true;
-    }
-        // int truths = 0;
-        // for(int i = 0; i < nums.length; i++) {
-        //     if(nums[i] >= low && nums[i] <= high) {truths += 1;}
-        // }
-        // if(truths == nums.length) {return true;}
-        // else {return false;}
-    // }
+        if(truths == nums.length) {return true;}
+        else {return false;}
+        }
+        
 
     Pair maxmin(int[] nums) {
         int a = nums[0];
