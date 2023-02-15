@@ -26,27 +26,25 @@ class Drill4 {
         //         return x - z;
         //     }
         // }
-        int diff1 = x - y; // -1
-        int diff2 = x - z; // -2
-        int diff3 = y - x; // 1
+        int diff1 = x - y; // - 4      x = -5; y = -1; z = 4
+        int diff2 = x - z; // -9
+        int diff3 = y - x; // 4
         int diff4 = y - z; // -1
         int diff5 = z - x; // 2
         int diff6 = z - y; // 1
 
-        if(diff1 > diff2 && diff1 > diff3 && diff1 > diff4 && diff1 > diff5 && diff1 > diff6) {
+        if(diff1 >= diff2 && diff1 >= diff3 && diff1 >= diff4 && diff1 >= diff5 && diff1 >= diff6) {
             return diff1;
-        } else if (diff2 > diff1 && diff2 > diff3 && diff2 > diff4 && diff2 > diff5 && diff2 > diff6) {
+        } else if (diff2 >= diff1 && diff2 >= diff3 && diff2 >= diff4 && diff2 >= diff5 && diff2 >= diff6) {
             return diff2;
-        } else if (diff3 > diff1 && diff3 > diff2 && diff3 > diff4 && diff3 > diff5 && diff3 > diff6) {
+        } else if (diff3 >= diff1 && diff3 >= diff2 && diff3 >= diff4 && diff3 >= diff5 && diff3 >= diff6) {
             return diff3;
-        } else if (diff4 > diff2 && diff4 > diff3 && diff4 > diff1 && diff4 > diff5 && diff4 > diff6) {
+        } else if (diff4 >= diff2 && diff4 >= diff3 && diff4 >= diff1 && diff4 >= diff5 && diff4 >= diff6) {
             return diff4;
-        } else if (diff5 > diff2 && diff5 > diff3 && diff5 > diff1 && diff5 > diff4 && diff5 > diff6) {
-            return diff5;
-        } else {
-            return diff6;
-        }
-
+        } else if (diff5 >= diff2 && diff5 >= diff3 && diff5 >= diff1 && diff5 >= diff4 && diff5 >= diff6) {
+            return diff5;  
+        } else {return diff6;}
+        
         // if ((x >= y) && (y >= z)) {
         //     int diference = x - y;
         //     return diference;

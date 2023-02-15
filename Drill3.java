@@ -21,10 +21,10 @@ class TextTweet {
     }
 
     String firstMention() {
-        if((this.contents.contains("@") == false) || (this.contents.length() < 2)){
+        if(this.contents.indexOf(" ") != (this.contents.length() - 1) || (this.contents.length() <= 1)) {
             return " ";
         }
-        return this.contents.substring(0,1);
+        return this.contents.substring(1, this.contents.length()+ 1);
     }
 }
 
@@ -40,7 +40,7 @@ class ReplyTweet {
     }
 
     boolean morePopularReply() {
-        return this.replyTo.likes > this.likes;
+        return this.replyTo.likes < this.likes;
     }
 
     int allLikes() {
@@ -48,8 +48,8 @@ class ReplyTweet {
     }
 
     boolean hasMention(String username) {
-        String usernameWithAt = "@" + username;
-        if((this.contents.contains(usernameWithAt)) || (this.replyTo.contents.contains(usernameWithAt))){
+        // String usernameWithAt = "@" + username;
+        if((this.contents.contains(username)) || (this.replyTo.contents.contains(username))){
             return true;
         } else {
             return false;
