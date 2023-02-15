@@ -31,7 +31,7 @@ class ArrayExamples {
         }
         if(truths == nums.length) {return true;}
         else {return false;}
-        }
+    }
         
 
     Pair maxmin(int[] nums) {
@@ -79,9 +79,9 @@ class ArrayExamples {
                t.checkExpect(this.allTrue(hiddenLies), false);
     }
 
-    Double[] dbls1 = {2.0, 3.0, 4.0};
-    Double[] dbls2 = {0.0, 3.0, 8.0};
-    Double[] dbls3 = {20.0, 10.0, 1.0};
+    double[] dbls1 = {2.0, 3.0, 4.0};
+    double[] dbls2 = {0.0, 3.0, 8.0};
+    double[] dbls3 = {20.0, 10.0, 1.0};
 
     boolean testallWithinRange(Tester t) {
         return t.checkExpect(this.allWithinRange(dbls1, 1.0, 5.0), true) &&
