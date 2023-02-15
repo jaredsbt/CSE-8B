@@ -53,11 +53,12 @@ class ReplyTweet {
         return this.contents.contains(firstUsernameWithAt) || (this.replyTo.contents.contains(firstUsernameWithAt)) ||
                this.contents.contains(usernameWithAt) || this.replyTo.contents.contains(usernameWithAt);
     }
-
-class Drill3 {
-    TextTweet example1 = new TextTweet("hello world", 333);
-
-    ReplyTweet reply = new ReplyTweet(example1, "hello", 0);
-
-    // ReplyTweet repl2 = new ReplyTweet(reply, "hello", 0);
 }
+
+// class Drill3 {
+//     TextTweet example1 = new TextTweet("hello world", 333);
+
+//     ReplyTweet reply = new ReplyTweet(example1, "hello", 0);
+
+//     // ReplyTweet repl2 = new ReplyTweet(reply, "hello", 0);
+// }
