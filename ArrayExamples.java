@@ -23,7 +23,7 @@ class ArrayExamples {
         return true;
     }
 
-    boolean allWithinRange(Double[] nums, double low, double high) {
+    boolean allWithinRange(Double[] nums, Double low, Double high) {
         for(int i = 0; i < nums.length; i++) {
             if(nums[i] <= low || nums[i] >= high) {return false;}
         }
