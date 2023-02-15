@@ -48,8 +48,8 @@ class ReplyTweet {
     }
 
     boolean hasMention(String username) {
-        // String usernameWithAt = "@" + username;
-        if((this.contents.contains(username)) || (this.replyTo.contents.contains(username))){
+        String usernameWithAt = "@" + username;
+        if((this.contents.equals(usernameWithAt)) || (this.replyTo.contents.equals(usernameWithAt))){
             return true;
         } else {
             return false;
