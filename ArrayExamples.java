@@ -25,9 +25,10 @@ class ArrayExamples {
 
     boolean allWithinRange(Double[] nums, Double low, Double high) {
         if(nums.length == 0) {return true;}
-        else {for(int i = 0; i < nums.length; i++) {if(nums[i] < low || nums[i] > high) {return false;}}
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] >= low || nums[i] <= high) {return true;}
         }
-        return true;
+        return false;
     }
 
     Pair maxmin(int[] nums) {
