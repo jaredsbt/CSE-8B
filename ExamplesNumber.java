@@ -1,4 +1,4 @@
-import tester.*;
+// import tester.*;
 
 interface Number {
     int numerator();
@@ -25,11 +25,13 @@ class WholeNumber implements Number {
         else if(other instanceof Fraction) {
             return new Fraction((numerator() * other.numerator()) + (denominator() * other.denominator()), this.denominator() * other.denominator());
         }
+    return other;
     }
 
     public Number multiply(Number other) {if(other instanceof WholeNumber) {return new WholeNumber(other.numerator() * this.n);}
         else if(other instanceof Fraction) {
-            return new Fraction(numerator() * other.numerator(), denominator() * other.denominator());} 
+            return new Fraction(numerator() * other.numerator(), denominator() * other.denominator());}
+    return other; 
         }
 
     public String toString() {return n + "";}
@@ -51,11 +53,13 @@ class Fraction implements Number {
     else if(other instanceof Fraction) {
         return new Fraction((numerator() * other.numerator()) + (denominator() * other.denominator()), this.denominator() * other.denominator());
     }
+    return other;
 }
 
     public Number multiply(Number other) {if(other instanceof WholeNumber) {return new WholeNumber(other.numerator() * this.n);}
     else if(other instanceof Fraction) {
-        return new Fraction(numerator() * other.numerator(), denominator() * other.denominator());} 
+        return new Fraction(numerator() * other.numerator(), denominator() * other.denominator());}
+    return other; 
     }
 
     public String toString() { return this.n + "/" + this.d;}
@@ -73,6 +77,6 @@ class ExamplesNumber {
     Fraction twoTenth = new Fraction(2, 10);
     Fraction threeTenth = new Fraction(3, 10);
 
-    String sumTest = oneTenth.toString() + twoTenth.toString() + threeTenth.toString();
-    String sumTest2 = oneTenth.toString() + (twoTenth.toString() + threeTenth.toString());
+    String sumTest = oneTenth.add(twoTenth).add(threeTenth).toString();
+    String sumTest2 = oneTenth.add(twoTenth.add(threeTenth)).toString();
 }
