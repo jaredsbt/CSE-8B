@@ -8,8 +8,10 @@ class TextTweet {
     }
 
     boolean hasMention(String username) { 
-        String firstUsername = "@" + username;
-        String lastUsername = "@" + username + " ";
+        String singleUsername = "@" + username;
+        String firstUsername = "@" + username + " ";
+        String lastUsername = " @" + username;
+        if(this.contents.equals(singleUsername)) {return true;}
         return this.contents.contains(firstUsername) || this.contents.contains(lastUsername);
         // int lengthOfName = newUsername.length();
         // int atIndex = newUsername.indexOf("@");
