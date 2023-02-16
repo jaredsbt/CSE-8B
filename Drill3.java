@@ -55,22 +55,24 @@ class ReplyTweet {
 
         if(this.contents.equals(usernameWithAt) || this.replyTo.contents.equals(usernameWithAt)) {return true;}
 
-    
-        if(this.contents.contains(firstUsernameWithAt) || this.replyTo.contents.contains(firstUsernameWithAt)) {
-            // int iOfSpace = this.contents.indexOf(" ");
-            String check = this.contents.substring(0, usernameWithAt.length());
-            String check2 = this.replyTo.contents.substring(0, usernameWithAt.length());
-            return check.equals(usernameWithAt) || check2.equals(usernameWithAt);
-        }
+        return this.contents.contains(firstUsernameWithAt) || this.replyTo.contents.contains(firstUsernameWithAt) || this.contents.contains(lastUsernameWithAt) || this.replyTo.contents.contains(lastUsernameWithAt);
 
-        if(this.contents.contains(lastUsernameWithAt) || this.replyTo.contents.contains(lastUsernameWithAt)) {
-            int iOfSpace = this.contents.indexOf(" ");
-            String check = this.contents.substring(iOfSpace + 1, usernameWithAt.length());
-            int iOfSpace2 = this.replyTo.contents.indexOf(" ");
-            String check2 = this.replyTo.contents.substring(iOfSpace2 + 1, usernameWithAt.length());
-            return check.equals(usernameWithAt) || check2.equals(usernameWithAt);
-        }
-        return false;
+    
+        // if(this.contents.contains(firstUsernameWithAt) || this.replyTo.contents.contains(firstUsernameWithAt)) {
+        //     // int iOfSpace = this.contents.indexOf(" ");
+        //     String check = this.contents.substring(0, usernameWithAt.length());
+        //     String check2 = this.replyTo.contents.substring(0, usernameWithAt.length());
+        //     return check.equals(usernameWithAt) || check2.equals(usernameWithAt);
+        // }
+
+        // if(this.contents.contains(lastUsernameWithAt) || this.replyTo.contents.contains(lastUsernameWithAt)) {
+        //     int iOfSpace = this.contents.indexOf(" ");
+        //     String check = this.contents.substring(iOfSpace + 1, usernameWithAt.length());
+        //     int iOfSpace2 = this.replyTo.contents.indexOf(" ");
+        //     String check2 = this.replyTo.contents.substring(iOfSpace2 + 1, usernameWithAt.length());
+        //     return check.equals(usernameWithAt) || check2.equals(usernameWithAt);
+        // }
+        // return false;
 
         // if(this.contents.contains(userInBetween) || this.replyTo.contents.contains(userInBetween)) {
         //     int iOfSpace = this.contents.indexOf(" ");
