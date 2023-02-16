@@ -21,10 +21,16 @@ class TextTweet {
     }
 
     String firstMention() {
-        if(this.contents.indexOf(" ") != (this.contents.length() - 1) || (this.contents.length() <= 1)) {
-            return " ";
-        }
-        return this.contents.substring(1, this.contents.length()+ 1);
+        int atIndex = this.contents.indexOf("@");
+        int spaceIndex = this.contents.indexOf(" ");
+
+        String firstMention = this.contents.substring(atIndex +1, spaceIndex);
+        return firstMention;
+        
+        // if(this.contents.indexOf(" ") != (this.contents.length() - 1) || (this.contents.length() <= 1)) {
+        //     return " ";
+        // }
+        // return this.contents.substring(1, this.contents.length()+ 1);
     }
 }
 
@@ -51,55 +57,9 @@ class ReplyTweet {
         String usernameWithAt = "@" + username;
         String firstUsernameWithAt = "@" + username + " ";
         String lastUsernameWithAt = " @" + username;
-        // String userInBetween = " @" + username + " ";
 
         if(this.contents.equals(usernameWithAt) || this.replyTo.contents.equals(usernameWithAt)) {return true;}
 
-        return this.contents.contains(firstUsernameWithAt) || this.replyTo.contents.contains(firstUsernameWithAt) || this.contents.contains(lastUsernameWithAt) || this.replyTo.contents.contains(lastUsernameWithAt);
-
-    
-        // if(this.contents.contains(firstUsernameWithAt) || this.replyTo.contents.contains(firstUsernameWithAt)) {
-        //     // int iOfSpace = this.contents.indexOf(" ");
-        //     String check = this.contents.substring(0, usernameWithAt.length());
-        //     String check2 = this.replyTo.contents.substring(0, usernameWithAt.length());
-        //     return check.equals(usernameWithAt) || check2.equals(usernameWithAt);
-        // }
-
-        // if(this.contents.contains(lastUsernameWithAt) || this.replyTo.contents.contains(lastUsernameWithAt)) {
-        //     int iOfSpace = this.contents.indexOf(" ");
-        //     String check = this.contents.substring(iOfSpace + 1, usernameWithAt.length());
-        //     int iOfSpace2 = this.replyTo.contents.indexOf(" ");
-        //     String check2 = this.replyTo.contents.substring(iOfSpace2 + 1, usernameWithAt.length());
-        //     return check.equals(usernameWithAt) || check2.equals(usernameWithAt);
-        // }
-        // return false;
-
-        // if(this.contents.contains(userInBetween) || this.replyTo.contents.contains(userInBetween)) {
-        //     int iOfSpace = this.contents.indexOf(" ");
-        //     String check = this.contents.substring(iOfSpace +1, firstUsernameWithAt.length());
-        //     return check.equals(usernameWithAt);
-        // }
-
-        // if(this.contents.contains(usernameWithAt) || this.replyTo.contents.contains(usernameWithAt)) {
-        //     if(this.contents.contains(" ")) {
-        //         int iOfUser = this.contents.indexOf(username);
-        //         String name = this.contents.substring(iOfUser);
-        //     }
-        //     int iOfUser = this.contents.indexOf(username);
-        //     int iOfAt = this.contents.indexOf("@");
-        //     String check = this.contents.substring(iOfAt, iOfUser + 1);
-        //     return check.equals(usernameWithAt);
-            
-    
+        return this.contents.contains(firstUsernameWithAt) || this.replyTo.contents.contains(firstUsernameWithAt) || this.contents.contains(lastUsernameWithAt) || this.replyTo.contents.contains(lastUsernameWithAt);       
     }
-    // String cut = this.contents.substring(0, length)
-    // this.contents.count("@") == 0 || this.contents.indexOf("@") == 0
 }
-
-// class Drill3 {
-//     TextTweet example1 = new TextTweet("hello world", 333);
-
-//     ReplyTweet reply = new ReplyTweet(example1, "hello", 0);
-
-//     // ReplyTweet repl2 = new ReplyTweet(reply, "hello", 0);
-// }
