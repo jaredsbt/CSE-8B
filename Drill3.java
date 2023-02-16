@@ -21,7 +21,7 @@ class TextTweet {
     }
 
     String firstMention() {
-        if(this.contents.contains("@") == false || this.contents.contains(" ") == false) {return " ";}
+        if(this.contents.contains("@") == false || this.contents.contains(" ") == false) {return "";}
         int atIndex = this.contents.indexOf("@");
         int spaceIndex = this.contents.indexOf(" ");
 
