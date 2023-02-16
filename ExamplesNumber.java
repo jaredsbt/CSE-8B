@@ -62,7 +62,7 @@ class Fraction implements Number {
 
     public String toString() { return this.n + "/" + this.d;}
 
-    public double toDouble() { return this.n / this.d;}
+    public double toDouble() { return (this.n * 1.0) / (this.d * 1.0);}
 
 }
 
