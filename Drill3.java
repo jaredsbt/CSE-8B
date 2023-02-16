@@ -50,9 +50,48 @@ class ReplyTweet {
     boolean hasMention(String username) {
         String usernameWithAt = "@" + username;
         String firstUsernameWithAt = "@" + username + " ";
-        return this.contents.contains(firstUsernameWithAt) || (this.replyTo.contents.contains(firstUsernameWithAt)) ||
-               this.contents.contains(usernameWithAt) || this.replyTo.contents.contains(usernameWithAt);
+        String lastUsernameWithAt = " @" + username;
+        // String userInBetween = " @" + username + " ";
+
+        if(this.contents.equals(usernameWithAt) || this.replyTo.contents.equals(usernameWithAt)) {return true;}
+
+    
+        if(this.contents.contains(firstUsernameWithAt) || this.replyTo.contents.contains(firstUsernameWithAt)) {
+            // int iOfSpace = this.contents.indexOf(" ");
+            String check = this.contents.substring(0, usernameWithAt.length());
+            String check2 = this.replyTo.contents.substring(0, usernameWithAt.length());
+            return check.equals(usernameWithAt) || check2.equals(usernameWithAt);
+        }
+
+        if(this.contents.contains(lastUsernameWithAt) || this.replyTo.contents.contains(lastUsernameWithAt)) {
+            int iOfSpace = this.contents.indexOf(" ");
+            String check = this.contents.substring(iOfSpace + 1, usernameWithAt.length());
+            int iOfSpace2 = this.replyTo.contents.indexOf(" ");
+            String check2 = this.replyTo.contents.substring(iOfSpace2 + 1, usernameWithAt.length());
+            return check.equals(usernameWithAt) || check2.equals(usernameWithAt);
+        }
+        return false;
+
+        // if(this.contents.contains(userInBetween) || this.replyTo.contents.contains(userInBetween)) {
+        //     int iOfSpace = this.contents.indexOf(" ");
+        //     String check = this.contents.substring(iOfSpace +1, firstUsernameWithAt.length());
+        //     return check.equals(usernameWithAt);
+        // }
+
+        // if(this.contents.contains(usernameWithAt) || this.replyTo.contents.contains(usernameWithAt)) {
+        //     if(this.contents.contains(" ")) {
+        //         int iOfUser = this.contents.indexOf(username);
+        //         String name = this.contents.substring(iOfUser);
+        //     }
+        //     int iOfUser = this.contents.indexOf(username);
+        //     int iOfAt = this.contents.indexOf("@");
+        //     String check = this.contents.substring(iOfAt, iOfUser + 1);
+        //     return check.equals(usernameWithAt);
+            
+    
     }
+    // String cut = this.contents.substring(0, length)
+    // this.contents.count("@") == 0 || this.contents.indexOf("@") == 0
 }
 
 // class Drill3 {
