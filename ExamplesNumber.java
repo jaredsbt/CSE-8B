@@ -49,15 +49,13 @@ class Fraction implements Number {
 
     public int denominator() {return this.d;}
 
-    public Number add(Number other) {if(other instanceof WholeNumber) {return new WholeNumber(other.numerator() + this.n);}
-    else if(other instanceof Fraction) {
-        return new Fraction((numerator() * other.numerator()) + (denominator() * other.denominator()), this.denominator() * other.denominator());
-    }
+    public Number add(Number other) {if(other instanceof WholeNumber || other instanceof Fraction) {
+        return new Fraction((this.denominator() * other.numerator()) + (other.denominator() * this.numerator()), this.denominator() * other.denominator());
+        }
     return other;
-}
+    }
 
-    public Number multiply(Number other) {if(other instanceof WholeNumber) {return new WholeNumber(other.numerator() * this.n);}
-    else if(other instanceof Fraction) {
+    public Number multiply(Number other) {if(other instanceof WholeNumber || other instanceof Fraction) {
         return new Fraction(numerator() * other.numerator(), denominator() * other.denominator());}
     return other; 
     }
