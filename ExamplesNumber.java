@@ -23,7 +23,7 @@ class WholeNumber implements Number {
 
     public Number add(Number other) {if(other instanceof WholeNumber) {return new WholeNumber(other.numerator() + this.n);}
         else if(other instanceof Fraction) {
-            return new Fraction((numerator() * other.numerator()) + (denominator() * other.denominator()), this.denominator() * other.denominator());
+            return new Fraction((this.denominator() * other.numerator()) + (other.denominator() * this.numerator()), this.denominator() * other.denominator());
         }
     return other;
     }
