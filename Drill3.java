@@ -21,13 +21,13 @@ class TextTweet {
     }
 
     String firstMention() {
-        if(this.contents.contains("@") == false || this.contents.contains(" ") == false) {return "";}
-        int atIndex = this.contents.indexOf("@");
-        int spaceIndex = this.contents.indexOf(" ");
-
-        String firstMention = this.contents.substring(atIndex +1, spaceIndex);
-        return firstMention;
-
+        if(this.contents.contains("@") && this.contents.contains(" ")) {
+            int atIndex = this.contents.indexOf("@");
+            int spaceIndex = this.contents.indexOf(" ");
+            String firstMention = this.contents.substring(atIndex +1, spaceIndex);
+            return firstMention;
+        }
+        return "";
         // if(this.contents.indexOf(" ") != (this.contents.length() - 1) || (this.contents.length() <= 1)) {
         //     return " ";
         // }
