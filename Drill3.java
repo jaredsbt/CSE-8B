@@ -12,6 +12,12 @@ class TextTweet {
         String firstUsername = "@" + username + " ";
         String lastUsername = " @" + username;
         if(this.contents.equals(singleUsername)) {return true;}
+
+        if(this.contents.contains(lastUsername)) {
+            int intOfSpace = this.contents.indexOf(" ");
+            String check = this.contents.substring(intOfSpace, this.contents.length());
+            return check.equals(lastUsername);
+        }
         return this.contents.contains(firstUsername) || this.contents.contains(lastUsername);
         // int lengthOfName = newUsername.length();
         // int atIndex = newUsername.indexOf("@");
