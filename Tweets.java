@@ -70,33 +70,33 @@ class Tweets {
 
 
     boolean testisStartOfThreadBy(Tester t) {
-        return t.checkExpect(this.cartiTweet.isStartOfThreadBy("playboicarti") == true, true) &&
-               t.checkExpect(this.lebronTweet.isStartOfThreadBy("King James") == true, false);
+        return t.checkExpect(this.cartiTweet.isStartOfThreadBy("playboicarti"), true) &&
+               t.checkExpect(this.lebronTweet.isStartOfThreadBy("King James"), false);
     }
 
     boolean testtotalLikes(Tester t) {
-        return t.checkExpect(this.cartiTweet.totalLikes() == 395300, true) &&
-               t.checkExpect(this.lebronTweet.totalLikes() == 428000, true);
+        return t.checkExpect(this.cartiTweet.totalLikes(), 395300) &&
+               t.checkExpect(this.lebronTweet.totalLikes(), 428000);
     }
 
     boolean testunrollThread(Tester t) {
-        return t.checkExpect(this.cartiTweet.unrollThread() == "playboicarti\n395300 likes\nlove all my supporters it's time\n", true) &&
-               t.checkExpect(this.lebronTweet.unrollThread() == "LeBron James\n428000 likes\nMaybe It's Me\n", true);
+        return t.checkExpect(this.cartiTweet.unrollThread(), "playboicarti\n395300 likes\nlove all my supporters it's time\n") &&
+               t.checkExpect(this.lebronTweet.unrollThread(), "LeBron James\n428000 likes\nMaybe It's Me\n");
     }
 
     boolean testisStartOfThreadBy(Tester t) {
-        return t.checkExpect(this.prosreplyToCarti.isStartOfThreadBy("playboicarti") == true, true) &&
-               t.checkExpect(this.astorsReplyToLebron.isStartOfThreadBy("LeBron James") == true, true); 
+        return t.checkExpect(this.prosreplyToCarti.isStartOfThreadBy("playboicarti"), true) &&
+               t.checkExpect(this.astorsReplyToLebron.isStartOfThreadBy("LeBron James"), true); 
     }
 
     boolean testtotalLikes(Tester t){
-        return t.checkExpect(this.renzysReplyToCarti.totalLikes() == 1633, true) &&
-               t.checkExpect(this.coffeesReplyToLebron.totalLikes() == 60, true); 
+        return t.checkExpect(this.renzysReplyToCarti.totalLikes(), 1633) &&
+               t.checkExpect(this.coffeesReplyToLebron.totalLikes(), 60); 
     }
 
     boolean testunrollThread(Tester t) {
-        return t.checkExpect(this.randomReplyToLebron.unrollThread() == "anonymous\n20000 likes\nLeBron texts like a middle schooler", true) &&
-               t.checkExpect(this.prosreplyToCarti.unrollThread() == "Profineorjay\n4 likes\nhe really said this and did nothing huh", true); 
+        return t.checkExpect(this.randomReplyToLebron.unrollThread(), "anonymous\n20000 likes\nLeBron texts like a middle schooler") &&
+               t.checkExpect(this.prosreplyToCarti.unrollThread(), "Profineorjay\n4 likes\nhe really said this and did nothing huh"); 
     }
 }
     
