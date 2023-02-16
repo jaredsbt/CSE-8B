@@ -9,11 +9,11 @@ class TextTweet {
 
     boolean hasMention(String username) { 
         String newUsername = username + " ";
-        int lengthOfName = newUsername.length();
-        int atIndex = newUsername.indexOf("@");
-        int excludeAt = atIndex + 1;
-        String theUsername = username.substring(excludeAt, lengthOfName); 
-        return this.contents.contains(theUsername);
+        // int lengthOfName = newUsername.length();
+        // int atIndex = newUsername.indexOf("@");
+        // int excludeAt = atIndex + 1;
+        // String theUsername = username.substring(excludeAt, lengthOfName); 
+        return this.contents.contains(newUsername);
     }
 
     boolean hasLike() {
