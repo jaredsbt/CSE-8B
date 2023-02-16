@@ -52,7 +52,7 @@ class ReplyTweet implements Tweet {
     }
 
     public String unrollThread() {
-        return this.replyTo.unrollThread() + "\n" + this.author + "\n" + this.likes + " likes" + "\n" + this.contents + "\n";
+        return this.replyTo.unrollThread() + this.author + "\n" + this.likes + " likes" + "\n" + this.contents + "\n";
     }
 }
 
